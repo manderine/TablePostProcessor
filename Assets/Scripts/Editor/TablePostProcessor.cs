@@ -24,6 +24,10 @@ public class TablePostProcessor : AssetPostprocessor {
 
 				__header_list.Add( "using UnityEngine;" );
 				__header_list.Add( "using System;" );
+				/*__header_list.Add( "using System.Collections;" );
+				__header_list.Add( "using System.Collections.Generic;" );
+				__header_list.Add( "using System.IO;" );
+				__header_list.Add( "using System.Reflection;" );*/
 				__header_list.Add( "" );
 			}
 			return __header_list;
@@ -50,6 +54,14 @@ public class TablePostProcessor : AssetPostprocessor {
 		}
 
 		OnImportXmls( importedAssets, deletedAssets );
+
+		/*for( int i=0; i<movedAssets.Length; i++ ) {
+			Debug.Log("Moved Asset: " + movedAssets[i] + " from: " + movedFromAssetPaths[i]);
+		}*/
+
+        /*for( int i=0; i<_ImportFilePathList.Count; i++ ) {
+            AssetDatabase.ImportAsset( _ImportFilePathList[i] );
+        }*/
 
 		if( _ImportFilePathList.Count > 0 ) {
 			AssetDatabase.Refresh();
